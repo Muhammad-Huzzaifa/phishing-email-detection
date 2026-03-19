@@ -1,0 +1,318 @@
+:root {
+    --c-1: #eefabd;
+    --c-2: #a0d585;
+    --c-3: #6984a9;
+    --c-4: #263b6a;
+    --ink: #111111;
+    --paper: #fffef2;
+    --shadow: 6px 6px 0 var(--ink);
+    --border: 3px solid var(--ink);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    background: linear-gradient(160deg, var(--c-1) 0%, #fdf5d4 38%, var(--c-2) 100%);
+    min-height: 100vh;
+    color: var(--ink);
+    overflow-x: hidden;
+}
+
+.page {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 1.2rem auto 2.5rem;
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.bg-shape {
+    position: fixed;
+    border: var(--border);
+    z-index: 1;
+    opacity: 0.22;
+}
+
+.bg-shape-1 {
+    width: 260px;
+    height: 260px;
+    background: var(--c-3);
+    top: -60px;
+    right: -20px;
+    transform: rotate(12deg);
+}
+
+.bg-shape-2 {
+    width: 300px;
+    height: 220px;
+    background: var(--c-4);
+    bottom: -70px;
+    left: -70px;
+    transform: rotate(-16deg);
+}
+
+.brutal-card {
+    border: var(--border);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+}
+
+.hero {
+    background: var(--c-4);
+    color: var(--paper);
+    padding: 1rem 1.2rem;
+}
+
+.tag {
+    display: inline-block;
+    margin: 0;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    border: 2px solid var(--paper);
+}
+
+.hero h1 {
+    margin: 0.6rem 0 0.4rem;
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+    letter-spacing: 0.03em;
+}
+
+.subtitle {
+    margin: 0;
+    max-width: 780px;
+    font-size: 1rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.panel {
+    padding: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 180px;
+    resize: vertical;
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--ink);
+    padding: 0.8rem;
+    font-family: inherit;
+    font-size: 0.98rem;
+}
+
+textarea:focus {
+    outline: none;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.actions {
+    margin-top: 0.9rem;
+    display: flex;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--ink);
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    transition: transform 120ms ease;
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-primary {
+    background: var(--c-2);
+}
+
+.btn-ghost {
+    background: var(--c-1);
+}
+
+.status {
+    margin: 0.85rem 0 0;
+    font-size: 0.93rem;
+    font-weight: 600;
+}
+
+.panel h2,
+.results h2 {
+    margin: 0 0 0.7rem;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+}
+
+.consensus {
+    border: var(--border);
+    padding: 0.8rem;
+    min-height: 190px;
+    box-shadow: 4px 4px 0 var(--ink);
+}
+
+.consensus p {
+    margin: 0.38rem 0;
+    font-weight: 700;
+}
+
+.consensus.neutral {
+    background: var(--c-1);
+}
+
+.consensus.safe {
+    background: var(--c-2);
+}
+
+.consensus.phishing {
+    background: #ffb8a9;
+}
+
+.results {
+    padding: 1rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--ink);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+}
+
+th,
+td {
+    border: 2px solid var(--ink);
+    padding: 0.6rem;
+    text-align: left;
+}
+
+th {
+    background: var(--c-3);
+    color: var(--paper);
+    font-family: "Archivo Black", sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 0.86rem;
+}
+
+.placeholder {
+    text-align: center;
+    font-weight: 600;
+    background: #fff;
+}
+
+.rise-in {
+    animation: rise-in 650ms ease-out;
+}
+
+.slide-in {
+    animation: slide-in 650ms ease-out;
+}
+
+.pop-in {
+    animation: pop-in 650ms ease-out;
+}
+
+.fade-in {
+    animation: fade-in 850ms ease-out;
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 920px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .consensus {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 540px) {
+    .page {
+        width: calc(100% - 1rem);
+    }
+
+    .hero,
+    .panel,
+    .results {
+        padding: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
